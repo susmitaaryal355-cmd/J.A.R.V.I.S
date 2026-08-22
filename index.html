@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.A.R.V.I.S AI</title>
+</head>
+
+<body>
+
+    <h1>J.A.R.V.I.S</h1>
+    <p>Personal AI Assistant</p>
+
+    <input
+        type="text"
+        id="userInput"
+        placeholder="Ask JARVIS something..."
+    >
+
+    <button onclick="askJarvis()">Ask JARVIS</button>
+
+    <p id="response"></p>
+
+    <script>
+        function askJarvis() {
+            const input = document.getElementById("userInput").value;
+            const response = document.getElementById("response");
+
+            if (input.trim() === "") {
+                response.innerText = "Please say something.";
+                return;
+            }
+
+            response.innerText =
+                "JARVIS: I received your message — " + input;
+        }
+    </script>
+
+</body>
+</html>
