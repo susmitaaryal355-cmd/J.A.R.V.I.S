@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>J.A.R.V.I.S AI</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>J.A.R.V.I.S</h1>
-    <p>Personal AI Assistant</p>
+    <div class="container">
 
-    <input
-        type="text"
-        id="userInput"
-        placeholder="Ask JARVIS something..."
-    >
+        <h1>J.A.R.V.I.S</h1>
 
-    <button onclick="askJarvis()">Ask JARVIS</button>
+        <p class="subtitle">
+            PERSONAL AI ASSISTANT
+        </p>
 
-    <p id="response"></p>
+        <div class="chat-box">
 
-    <script>
-        function askJarvis() {
-            const input = document.getElementById("userInput").value;
-            const response = document.getElementById("response");
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask JARVIS something..."
+            >
 
-            if (input.trim() === "") {
-                response.innerText = "Please say something.";
-                return;
-            }
+            <button onclick="askJarvis()">
+                ASK
+            </button>
 
-            response.innerText =
-                "JARVIS: I received your message — " + input;
-        }
-    </script>
+            <p id="response">
+                JARVIS: Systems online. How can I help?
+            </p>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
