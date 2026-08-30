@@ -1,17 +1,12 @@
-async function askJarvis(message) {
-  const response = await fetch("/api/chat", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ message })
-  });
+const reply = await askJarvis(transcript);
 
-  const data = await response.json();
+document.getElementById("response").textContent =
+  "JARVIS: " + reply;
 
-  if (!response.ok) {
-    throw new Error(data.error || "AI request failed");
-  }
+speechSynthesis.cancel();
 
-  return data.reply;
-}
+const speech = new SpeechSynthesisUtterance(reply);
+speech.rate = 1;
+speech.pitch = 1;
+
+speechSynthesis.speak(speech);
